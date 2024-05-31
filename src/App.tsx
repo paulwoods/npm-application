@@ -18,24 +18,23 @@ function App() {
             <ThemeProvider theme={darkTheme}>
                 <CssBaseline/>
 
-                    <Box display="flex" flexDirection="column" justifyContent="flex-start" alignItems="center"
-                         gap="1em">
-                        <Button variant="outlined" color="primary">primary</Button>
-                        <Button variant="outlined" color="secondary">secondary</Button>
-                        <Button variant="outlined" color="success">success</Button>
-                        <Button variant="outlined" color="error">error</Button>
-                        <Button variant="outlined" color="info">info</Button>
-                        <Button variant="outlined" color="warning">warning</Button>
-                    </Box>
-                    <Box display="flex" flexDirection="column" justifyContent="flex-start" alignItems="center"
-                         gap="1em">
-                        <Button variant="text" color="primary">primary</Button>
-                        <Button variant="text" color="secondary">secondary</Button>
-                        <Button variant="text" color="success">success</Button>
-                        <Button variant="text" color="error">error</Button>
-                        <Button variant="text" color="info">info</Button>
-                        <Button variant="text" color="warning">warning</Button>
-                    </Box>
+                <Box display="flex" flexDirection="column" justifyContent="flex-start" alignItems="center"
+                     gap="1em">
+                    <Button variant="outlined" color="primary">primary</Button>
+                    <Button variant="outlined" color="secondary">secondary</Button>
+                    <Button variant="outlined" color="success">success</Button>
+                    <Button variant="outlined" color="error">error</Button>
+                    <Button variant="outlined" color="info">info</Button>
+                    <Button variant="outlined" color="warning">warning</Button>
+                </Box>
+                <Box display="flex" flexDirection="column" justifyContent="flex-start" alignItems="center"
+                     gap="1em">
+                    <Button variant="text" color="primary">primary</Button>
+                    <Button variant="text" color="secondary">secondary</Button>
+                    <Button variant="text" color="success">success</Button>
+                    <Button variant="text" color="error">error</Button>
+                    <Button variant="text" color="info">info</Button>
+                    <Button variant="text" color="warning">warning</Button>
                 </Box>
 
                 <div>
