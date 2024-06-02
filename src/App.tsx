@@ -1,29 +1,39 @@
 import './App.css'
 import {createTheme, ThemeProvider} from "@mui/material/styles";
-import {Input, Label, Button, Stat} from "mui-component-library-mrpaulwoods";
-import {CssBaseline} from "@mui/material";
+import {Button, CssBaseline, PaletteMode, useTheme} from "@mui/material";
+import {Stat} from "mui-component-library-mrpaulwoods";
+import {ReactNode, useState} from "react";
 
-function App() {
+export default function App() {
 
-    const darkTheme = createTheme({
-        palette: {
-            mode: 'light',
-        },
-    });
+    const theme = useTheme()
 
     return (
         <>
-            <ThemeProvider theme={darkTheme}>
+            <DarkModeThemeProvider>
                 <CssBaseline/>
-                <h1>application: {darkTheme.palette.mode} mode</h1>
-                <Stat value={'55,555'} unit={'Unique Visitors Every Month'} />
-                <div style={{display:"flex", flexDirection:"column", gap: "1em"}}><Label>The Label</Label>
-                    <Input></Input>
-                    <Button>The Button</Button>
-                </div>
-            </ThemeProvider>
+                <h1>application: {theme.palette.mode} mode</h1>
+                <Stat value={'54,321'} unit={'Unique Visitors Every Month'} />
+            </DarkModeThemeProvider>
         </>
     )
 }
 
-export default App
+const DarkModeThemeProvider = ({children} : {children: ReactNode}) => {
+
+    const [mode, setMode] = useState<PaletteMode>('dark')
+    const toggleMode = () => {
+        setMode(old => old === "light" ? "dark" : "light")
+    };
+
+    const darkTheme = createTheme({
+        palette: {
+            mode: mode,
+        },
+    });
+
+    return <ThemeProvider theme={darkTheme}>
+        <Button variant="contained" color="primary" onClick={toggleMode}>Toggle Dark Mode</Button>
+        {children}
+    </ThemeProvider>
+}
